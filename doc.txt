@@ -31,6 +31,18 @@ Operator	Description
    &	    Bitwise AND
    ^	    Bitwise exclusive OR: XOR
         The instanceof operator checks whether an object is an instanceof a particular class.
+        objectName instanceOf className;
+        We can use the instanceof operator to check if objects of the subclass is also an instance of the superclass.
+        and also check whether an object of a class is also an instance of the interface implemented by the class.
+// Java program to check if an object of a class is also
+//  an instance of the interface implemented by the class
+
+interface Animal {
+}
+
+class Dog implements Animal {
+}
+
 
 Ternary Operator:
 variable = Expression ? expression1 : expression2
@@ -408,4 +420,4 @@ class Main extends FinalClass {
 ..
 
 
-Java Recursion:
+
