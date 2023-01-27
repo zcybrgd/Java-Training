@@ -1,0 +1,222 @@
+DATA TYPES:
+        short value=187; // -32768 to 32767 
+        byte age=18; // from -128 to 127, default: 0
+        long range = -42332200000L;
+        char favLetter='Z';
+        char $favLetter='\u0093';
+        char _favLetter=65;
+        int binary=0b1101;
+        int hexa=0xd582;
+        int octal=047;
+        boolean happy; // default: false
+        // n*10^k; nek;
+        double myFloatingFreaking=17.58e2;
+        float gpa=5.6F;
+        String persona="folklore";
+        System.out.println(_favLetter);
+OPERATORS:
+        we can include different numeric data types in the arithmetic operation
+        we can do this will all the arithmetic op: *=	<=> a *= b;	<=> a = a * b;, they are assignment ops;
+        Relational operators are used to check the relationship between two operands.
+        and Logical ones && || !
+        both the same as C language ops;
+        Unary operators are used with only one operand, ++num;
+        !value	Logical complement operator: inverts the value of a boolean
+        Bitwise operators in Java are used to perform operations on individual bits.
+Operator	Description
+   ~	    Bitwise Complement
+  <<	    Left Shift
+  >>	    Right Shift
+  >>>	    Unsigned Right Shift
+   &	    Bitwise AND
+   ^	    Bitwise exclusive OR: XOR
+        The instanceof operator checks whether an object is an instanceof a particular class.
+
+Ternary Operator:
+variable = Expression ? expression1 : expression2
+code ;
+       short binary=~0b001101;
+       short var=0b001101&0b001001;
+       System.out.println(binary);
+
+A block is a group of statements (zero or more) that is enclosed in curly braces { }
+
+Control Flow Statements: 
+    if(5>7){
+        System.out.print("falseeeee");
+     }
+     else if(6<8){
+        System.out.print("5<7");
+     }
+     else{
+        System.out.println(null);
+     }
+these above obviously aren't nested, but in java we can have if statements nested as well
+
+Switch statement: the same as C
+switch (expression) {
+
+  case value1:
+    // code
+    break;
+  
+  case value2:
+    // code
+    break;
+  
+  ...
+  ...
+  
+  default:
+    // default statements
+  }
+
+
+input:
+     // create a scanner object
+     Scanner input=new Scanner(System.in);
+     System.out.println("Enter your age");
+     int age=input.nextInt();
+     // close the scanner object
+     System.out.print("so your age is : "+age+", good.");
+     input.close();
+for loop: 
+for (initialExpression; testExpression; updateExpression) {
+    // body of the loop
+}
+for(i=0; i<5; i++)
+
+Java for-each Loop:
+    // create an array
+    int[] numbers = {3, 7, 5, -5};
+    
+    // iterating through the array 
+    for (int number: numbers) {
+       System.out.println(number);
+    }
+While loop:
+    while (testExpression) {
+    // body of loop
+}
+do {
+    // body of loop
+} while(textExpression);
+
+break and continue:
+The break statement in Java terminates the loop immediately, and the control of the program moves to the next statement following the innermostloop.
+in nested loops:
+we have used the label identifier to specify the outer loop. (break label;).
+break second;
+
+The continue statement skips the current iteration of a loop (for, while, do...while, etc).
+
+In the case of nested loops in Java, the continue statement skips the current iteration of the innermost loop.
+continue label;
+
+
+ARRAYS:
+String[] array = new String[100];
+
+// declare an array
+double[] data;
+// allocate memory
+data = new double[10];
+
+double[] data = new double[10];
+
+//declare and initialize and array
+int[] age = {12, 4, 5, 2, 5};
+
+Array indices always start from 0
+
+age.length=5;
+
+MATRICES:
+double[][] matrix = {{1.2, 4.3, 4.0}, 
+      {4.1, -1.1}
+};
+
+int[][] array = new int[3][4];
+String[][][] data = new String[3][4][2];
+
+// test is a 3d array
+int[][][] test = {
+        {
+          {1, -2, 3}, 
+          {2, 3, 4}
+        }, 
+        { 
+          {-4, -5, 6, 9}, 
+          {1}, 
+          {2, 3}
+        } 
+};
+Basically, a 3d array is an array of 2d arrays. The rows of a 3d array can also vary in length just like in a 2d array.
+
+        int[][] a = {
+            {1, -2, 3}, 
+            {-4, -5, 6, 9}, 
+            {7}, 
+        };
+      
+        // first for...each loop access the individual array
+        // inside the 2d array
+        for (int[] innerArray: a) {
+            // second for...each loop access each element inside the row
+            for(int data: innerArray) {
+                System.out.println(data);
+            }
+        }
+
+
+1. Copying Arrays Using Assignment Operator
+int [] numbers = {1, 2, 3, 4, 5, 6};
+int [] positiveNumbers = numbers;   
+If we change elements of the first array, corresponding elements of the other (copied) arrays also change.
+
+2. Using Looping Construct to Copy Arrays
+
+// this is good:  System.out.println(Arrays.toString(destination));
+
+3. Copying Arrays Using arraycopy() method
+import java.util.Arrays;
+
+arraycopy(Object src, int srcPos,Object dest, int destPos, int length)
+src - source array you want to copy
+srcPos - starting position (index) in the source array
+dest - destination array where elements will be copied from the source
+destPos - starting position (index) in the destination array
+length - number of elements to copy
+
+4. Copying Arrays Using copyOfRange() method
+int[] destination1 = Arrays.copyOfRange(source, 0, source.length);   
+
+ int[][] source = {
+              {1, 2, 3, 4}, 
+              {5, 6},
+              {0, 2, 42, -4, 5}
+              };
+
+        int[][] destination = new int[source.length][];
+
+        for (int i = 0; i < destination.length; ++i) {
+
+            // allocating space for each row of destination array
+            destination[i] = new int[source[i].length];
+
+            for (int j = 0; j < destination[i].length; ++j) {
+                destination[i][j] = source[i][j];
+            }
+        }
+     
+        // displaying destination array
+        System.out.println(Arrays.deepToString(destination));  
+Copying 2d Arrays using arraycopy()
+  int[][] destination = new int[source.length][];
+
+        for (int i = 0; i < source.length; ++i) {
+
+             // allocating space for each row of destination array
+             destination[i] = new int[source[i].length];
+             System.arraycopy(source[i], 0, destination[i], 0, destination[i].length);
+        }
