@@ -212,7 +212,7 @@ int[] destination1 = Arrays.copyOfRange(source, 0, source.length);
         // displaying destination array
         System.out.println(Arrays.deepToString(destination));  
 Copying 2d Arrays using arraycopy()
-  int[][] destination = new int[source.length][];
+       int[][] destination = new int[source.length][];
 
         for (int i = 0; i < source.length; ++i) {
 
@@ -220,3 +220,192 @@ Copying 2d Arrays using arraycopy()
              destination[i] = new int[source[i].length];
              System.arraycopy(source[i], 0, destination[i], 0, destination[i].length);
         }
+
+
+Methods:
+ 
+modifier static returnType nameOfMethod (parameter1: formal arg(and in the main: actual arg, and they should match), parameter2, ...) {
+  // method body
+}
+Getter: A method that allows you to access an attribute in a given class.
+Setter: A method that allows you to set or mutate the value of an attribute in a class.
+modifier: the access type
+
+public - This means it can be accessed by other classes.
+private - This means it can not
+You cannot set the access modifier of getters methods.
+
+Modifier	Description
+Default	        declarations are visible only within the package (package private)
+Private	        declarations are visible within the class only
+Protected	declarations are visible within the package or all subclasses
+Public	        declarations are visible everywhere
+package defaultPackage;
+class Logger {
+    void message(){
+        System.out.println("This is a message");
+    }
+}
+
+
+
+static: it can be accessed without creating objects
+
+In Java, two or more methods may have the same name if they differ in parameters 
+(different number of parameters, different types of parameters, or both). These methods are called overloaded methods and this feature is called method overloading.
+
+Java Constructors:
+Unlike Java methods, a constructor has the same name as that of the class and does not have any return type. For example,
+
+class Test {
+  Test() {
+    // constructor body
+  }
+}
+Here, Test() is a constructor. It has the same name as that of the class and doesn't have a return type.
+the constructor does not accept any parameters. Hence, it is known as a no-arg constructor.
+Once a constructor is declared private, it cannot be accessed from outside the class. So, creating objects from outside the class is prohibited using the private constructor.
+However, if we want to create objects outside the class, then we need to declare the constructor as public.
+
+Parameterized constructor
+class Main {
+
+  String languages;
+
+  // constructor accepting single value
+  Main(String lang) {
+    languages = lang;
+    System.out.println(languages + " Programming Language");
+  }
+
+  public static void main(String[] args) {
+
+    // call constructor by passing a single value
+    Main obj1 = new Main("Java");
+    Main obj2 = new Main("Python");
+    Main obj3 = new Main("C");
+  }
+}
+
+
+A constructor cannot be abstract or static or final.
+A constructor can be overloaded but can not be overridden.
+
+
+Java Strings:
+all string variables are instances of the String class.
+ops: 
+int length = greet.length();
+String joinedString = first.concat(second);
+boolean result = first.equals(second);
+In Java, strings are immutable.
+
+so we use the new keyword: 
+// create a string using the new keyword
+Here, we are directly providing the value of the string (Java). Hence, the compiler first checks the string pool to see if the string already exists.
+
+If the string already exists, the new string is not created. Instead, the new reference, example points to the already existed string (Java).
+If the string doesn't exist, the new string (Java is created.
+2. While creating strings using the new keyword,
+
+String example = new String("Java");
+Here, the value of the string is not directly provided. Hence, a new "Java" string is created even though "Java" is already present inside the memory pool.
+
+
+Methods	        Description
+contains()	checks whether the string contains a substring
+substring()	returns the substring of the string
+join()	join the given strings using the delimiter
+replace()	replaces the specified old character with the specified new character
+replaceAll()	replaces all substrings matching the regex pattern
+replaceFirst()	replace the first matching substring
+charAt()	returns the character present in the specified location
+getBytes()	converts the string to an array of bytes
+indexOf()	returns the position of the specified character in the string
+compareTo()	compares two strings in the dictionary order
+compareToIgnoreCase()	compares two strings ignoring case differences
+trim()	removes any leading and trailing whitespaces
+format()	returns a formatted string
+split()	breaks the string into an array of strings
+toLowerCase()	converts the string to lowercase
+toUpperCase()	converts the string to uppercase
+valueOf()	returns the string representation of the specified argument
+toCharArray()	converts the string to a char array
+matches()	checks whether the string matches the given regex
+startsWith()	checks if the string begins with the given string
+endsWith()	checks if the string ends with the given string
+isEmpty()	checks whether a string is empty of not
+intern() 	returns the canonical representation of the string
+contentEquals()	checks whether the string is equal to charSequence
+hashCode()	returns a hash code for the string
+subSequence()	returns a subsequence from the string
+
+
+
+instance variables and parameters may have the same name. For example,
+
+class MyClass {
+    // instance variable
+    int age;
+
+    // parameter
+    MyClass(int age){
+        this.age = age;
+    }
+}
+
+
+While working with constructor overloading, we might have to invoke one constructor from another constructor. In such a case, we cannot call the constructor explicitly. Instead, we have to use this keyword.
+
+Here, we use a different form of this keyword. That is, this(). Let's take an example,
+
+class Complex {
+
+    private int a, b;
+
+    // constructor with 2 parameters
+    private Complex( int i, int j ){
+        this.a = i;
+        this.b = j;
+    }
+
+    // constructor with single parameter
+    private Complex(int i){
+        // invokes the constructor with 2 parameters
+        this(i, i); 
+    }
+
+    // constructor with no parameter
+    private Complex(){
+        // invokes the constructor with single parameter
+        this(0);
+    }
+
+    @Override
+    public String toString(){
+        return this.a + " + " + this.b + "i";
+    }
+
+
+final:
+Once any entity (variable, method or class) is declared final, it can be assigned only once.
+final int age = 22;
+
+method overriding occurs when a subclass (child class) has the same method as the parent class. 
+In other words, method overriding occurs when a subclass provides a particular implementation of a method declared by one of its parent classes.
+
+the final method cannot be overridden by the child class.
+the final class cannot be inherited by another class.
+// create a final class
+final class FinalClass {
+  public void display() {
+    System.out.println("This is a final method.");
+  }
+}
+
+// try to extend the final class
+class Main extends FinalClass {
+..
+
+
+Java Recursion:

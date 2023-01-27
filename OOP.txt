@@ -1,0 +1,18 @@
+encapsulation: when we group of related variables and functions: object
+variables: propreties // fields
+functions: methods
+
+
+abstraction;
+inheritance: eliminate redandant code
+Polymorphism: many forms
+a technique to get rid off if else and switch statements
+use the same method differently to different objects
+
+Creating an Object in Java: 
+className object = new className();
+
+// for Bicycle class
+Bicycle sportsBicycle = new Bicycle();
+
+
