@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class App{
-    public static int factorial(int n){
+    public int factorial(int n){
         if(n>1){
             return n*factorial(n-1);
         }else{
@@ -11,8 +11,8 @@ public class App{
         Scanner input = new Scanner(System.in);
         System.out.println("Enter the number: ");
         int n = input.nextInt();
-        int result = factorial(n);
-        System.out.println("the factorial of : " + n + " is : " +result);
+        App app = new App();
+        System.out.println("the factorial of : " + n + " is : " +app.factorial(n));
         input.close();
     }
 }

@@ -420,4 +420,9 @@ class Main extends FinalClass {
 ..
 
 
+If the abstract class includes any abstract method, then all the child classes inherited from the abstract 
+superclass must provide the implementation of the abstract method.
+A subclass must override all abstract methods of an abstract class. 
+However, if the subclass is declared abstract, it's not mandatory to override abstract methods.
+
 
