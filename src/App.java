@@ -1,18 +1,16 @@
 import java.util.Scanner;
+
+import exo9.Film;
+import exo9.Seance;
+import java.time.LocalDate;
+import java.time.LocalTime;
 public class App{
-    public int factorial(int n){
-        if(n>1){
-            return n*factorial(n-1);
-        }else{
-            return 1;
-        }
-    }
     public static void main(String[] args){
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter the number: ");
-        int n = input.nextInt();
-        App app = new App();
-        System.out.println("the factorial of : " + n + " is : " + app.factorial(n));
-        input.close();
+        LocalDate dateF = LocalDate.of(2023, 2, 15);
+        LocalTime timeF = LocalTime.of(15, 30);
+        Film film = new Film();
+        film.setFilmTitle("The Martian");
+        Seance seance = new Seance(5, dateF ,timeF, 250.75F, film);
+        seance.afficher();
     }
 }
