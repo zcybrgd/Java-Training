@@ -20,4 +20,7 @@ public class Film {
     public void setFilmTitle(String filmTitle){
         this.filmTitle = filmTitle;
     }
+    public String getRealisateur(){
+        return this.realisateur;
+    }
 }
