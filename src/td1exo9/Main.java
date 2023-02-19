@@ -18,13 +18,19 @@ public class Main{
         Salle salle1 = new Salle(1, 62, seances);
         Salle salle2 = new Salle(2,85, seances);
         Salle salle3 = new Salle(3, 54, seances);
+        LocalDate dateF1 = LocalDate.of(2023, 2, 15);
+        LocalTime timeF = LocalTime.of(15, 30);
+        LocalTime prject = LocalTime.of(2, 30);
+        Film film = new Film();
+        film.setFilmTitle("The Martian");
+        Seance seance = new Seance(5, dateF1 ,timeF,prject, 250.75F, film);
         Salle[] salles={salle1, salle2, salle3};
         Cinema monCine = new Cinema(salles); 
         Site website = new Site(monCine);
         switch(choice){
             case 1:
             {
-                website.afficherUnFilm();
+                website.afficherUnFilm(seance);
             }break;
             case 2:
             {
