@@ -2,16 +2,17 @@ import java.util.Scanner;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import exo9.Cinema;
+import exo9.Client;
 import exo9.Salle;
 import exo9.Seance;
 import exo9.Site;
-
+import exo9.Fidele;
+import java.util.Scanner;
 public class App{
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
         System.out.println("Bienvenue dans notre site, choisissez 1 pour consulter les films, et 2 pour réserver: ");
         int choice = input.nextInt();
-        input.close();
         LocalDate dateF = LocalDate.of(2023, 2, 15);
         LocalTime timeF1 = LocalTime.of(13, 00);
         LocalTime timeF2 = LocalTime.of(17, 00);
@@ -32,10 +33,18 @@ public class App{
             }break;
             case 2:
             {
-                website.reserver();
+                System.out.print("Entrez votre numero client: ");
+                int numClient = input.nextInt();
+                System.out.print("Entrez le num de séance à laquelle vous désirer assister : ");
+                int numSeance = input.nextInt();
+                Fidele client = new Fidele(numClient, numSeance, 30);
+                Client[] liste= {client};
+                Fidele.liste = liste;
+                boolean bool = client.existEtVerification(client, salle3, deuxiemeSeance);
             }break;
             default: System.out.println("QUITTER LE SITE");
         }
+        input.close();
     }
 }
 /* switch statement : in the menu: 

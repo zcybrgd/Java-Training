@@ -1,7 +1,6 @@
 package exo9;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Scanner;
 public class Site {
     // les fields de Site: array de films
     // consultation (afficher la liste de films que le ciné programme)
@@ -18,14 +17,7 @@ public class Site {
         Seance seance = new Seance(5, dateF ,timeF,prject, 250.75F, film);
         seance.afficher();
     }
-    public void reserver(){
-          Scanner input = new Scanner(System.in);
-          System.out.print("Entrez votre numero client: ");
-          int numClient = input.nextInt();
-          System.out.print("Entrez le num de séance à laquelle vous désirer assister : ");
-          int numSeance = input.nextInt();
-          Client nvClient = new Client(numClient, numSeance);
-          Client.nbrSeancesAssis = 30;
-          input.close();
+    public int reserver(int numClient, int numSeance){
+          return 30;
     }
 }
