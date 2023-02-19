@@ -1,4 +1,4 @@
-package exo9;
+package td1exo9;
 
 public class Salle {
     private int numero;

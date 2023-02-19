@@ -1,4 +1,4 @@
-package exo9;
+package td1exo9;
 public class Fidele extends Client {
     public static Client[] liste;
     public Fidele(int numClient, int numSeance, int nbrSeancesAssis){

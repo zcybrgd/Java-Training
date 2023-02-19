@@ -1,14 +1,9 @@
+package td1exo9;
 import java.util.Scanner;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import exo9.Cinema;
-import exo9.Client;
-import exo9.Salle;
-import exo9.Seance;
-import exo9.Site;
-import exo9.Fidele;
 import java.util.Scanner;
-public class App{
+public class Main{
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
         System.out.println("Bienvenue dans notre site, choisissez 1 pour consulter les films, et 2 pour réserver: ");

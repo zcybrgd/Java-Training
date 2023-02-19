@@ -1,4 +1,4 @@
-package exo8;
+package td1exo8;
 public class Etudiant {
     private String nom;
     private String prenom;

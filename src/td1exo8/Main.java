@@ -1,4 +1,4 @@
-package exo8;
+package td1exo8;
 public class Main{
     public static void main(String[] args){
         // Créer 5 objets de type Etudiant

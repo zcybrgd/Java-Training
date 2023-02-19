@@ -1,4 +1,4 @@
-package exo9;
+package td1exo9;
 import java.time.LocalDate;
 import java.time.LocalTime;
 public class Site {

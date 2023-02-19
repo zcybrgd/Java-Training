@@ -1,4 +1,4 @@
-package exo8;
+package td1exo8;
 public class ServiceAssid {
     private Etudiant[] liste;
     private SeanceTDTP[] seance;
