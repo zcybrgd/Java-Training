@@ -29,7 +29,7 @@ public class MainApp {
                 Etudiant Stu3 = new Etudiant("Guittone", "Djihene", (short) 19, 210057,notes3);
                 Personne[] tableauPersonne = {Ens1, Ens2, Stu1, Stu2, Stu3};
                 for(Personne eachPerso : tableauPersonne){
-                    System.out.println("------------------------------");
+                    System.out.println("\n------------------------------");
                     eachPerso.afficher();
                 }
             }

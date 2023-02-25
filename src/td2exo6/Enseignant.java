@@ -11,6 +11,9 @@ public class Enseignant extends Personne {
     public void afficher(){
         super.afficher();
         System.out.println("numéro de sécurité sociale : "+ this.numSecSociale);
-        System.out.println("modules : "+ modules);
+        System.out.println("Modules : ");
+        for(String eachModule : modules){
+            System.out.print(" " + eachModule);
+        }
     }
 }
