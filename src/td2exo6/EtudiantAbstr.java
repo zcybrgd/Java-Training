@@ -1,10 +1,10 @@
 package td2exo6;
 
-public class Etudiant extends Personne {
+public class EtudiantAbstr extends PersonneAbstr implements Comparable<EtudiantAbstr> {
     private int matricule;
     private double[] notes;
     private static int nbrModules;
-    public Etudiant(String n, String p, short a, int mat, double[] notes){
+    public EtudiantAbstr(String n, String p, short a, int mat, double[] notes){
         super(n, p, a);
         this.matricule = mat;
         this.notes = notes;
@@ -22,5 +22,15 @@ public class Etudiant extends Personne {
         super.afficher();
         System.out.println("matricule : "+ this.matricule);
         System.out.println("moyenne : "+ calculMoyenne());
+    }
+    public void afficherType(Object obj){
+        Class<? extends Object> objClass = obj.getClass();
+        System.out.println(objClass.getName());
+    }
+    public int compareTo(EtudiantAbstr obj){
+       double thismoy = this.calculMoyenne();
+       double thatmoy = obj.calculMoyenne();
+      // return Integer.compare(this.myValue, other.getMyValue());
+       return Double.compare(thismoy, thatmoy);
     }
 }
