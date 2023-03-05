@@ -1,4 +1,5 @@
 package td2exo6;
+import java.util.Arrays;
 import java.util.Scanner;
 public class MainApp {
     public static void main(String[] args){
@@ -37,16 +38,31 @@ public class MainApp {
                 String[] mod1 = {"ANA3","ANA4"};
                 String[] mod2 = {"ARCHI1","POO"};
                 double[] notes1 = {17, 11, 15.5 , 18.25};
+                double[] notes2 = {14, 13, 15.75 , 16};
                 double[] notes3 = {17, 10.25, 19, 13.5};
                 EnseignantAbstr E1 = new EnseignantAbstr("Lounis", "Farhat", (short) 37, 1472575848L, mod1);
                 EnseignantAbstr E2 = new EnseignantAbstr("Bousbia", "Nabila", (short) 42, 2832758548L, mod2);
-                int result = E2.compareTo(E1);
-                System.out.println("après avoir comparer les noms des enseignants pour les trier en ordre alphabétique, le résultat: " + result);
                 EtudiantAbstr Stu1 = new EtudiantAbstr("Boukhetala", "Zaineb", (short) 18, 210052,notes1);
+                EtudiantAbstr Stu2 = new EtudiantAbstr("Mallek", "Dina", (short) 20, 200108,notes2);
                 EtudiantAbstr Stu3 = new EtudiantAbstr("Guittone", "Djihene", (short) 19, 210057,notes3);
-                int resultat = Stu1.compareTo(Stu3);
-                System.out.println("après avoir comparer les moyennes des étudiants pour les trier en ordre décroissant, le résultat: " + resultat);
-
+                EnseignantAbstr[] arrayEnseig = {E1, E2};
+                EtudiantAbstr[] arrayStudents = {Stu1, Stu2, Stu3};
+               /*  System.out.println("before sorting");
+                for (EtudiantAbstr num : arrayStudents) {
+                    System.out.print(num.calculMoyenne() + " ");
+                }
+                System.out.println("\nafter sorting");
+                Arrays.sort(arrayStudents);
+                for (EtudiantAbstr num : arrayStudents) {
+                    System.out.print(num.calculMoyenne() + " ");
+                }
+                for(EnseignantAbstr e : arrayEnseig){
+                    System.out.println(e.getNom());
+                }
+                Arrays.sort(arrayEnseig);
+                for(EnseignantAbstr e : arrayEnseig){
+                    System.out.println(e.getNom());
+                }*/
             }
         }
     }

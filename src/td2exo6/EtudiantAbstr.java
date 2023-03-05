@@ -27,10 +27,10 @@ public class EtudiantAbstr extends PersonneAbstr implements Comparable<EtudiantA
         Class<? extends Object> objClass = obj.getClass();
         System.out.println(objClass.getName());
     }
+    // l'appel : stu1.compareTo(stu2) ; if stu1.moy>stu2.moy then it returns un entier positif
     public int compareTo(EtudiantAbstr obj){
        double thismoy = this.calculMoyenne();
        double thatmoy = obj.calculMoyenne();
-      // return Integer.compare(this.myValue, other.getMyValue());
        return Double.compare(thismoy, thatmoy);
     }
 }
