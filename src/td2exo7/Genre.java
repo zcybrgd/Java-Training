@@ -1,5 +1,5 @@
 package td2exo7;
-// not finished yet
+
 public enum Genre {
-    
+    CLASSIQUE, JAZZ, POP, ROCK, RAP, RNB
 }
