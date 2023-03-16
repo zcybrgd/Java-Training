@@ -1,10 +1,19 @@
 package td2exo7;
 
-import java.net.PasswordAuthentication;
 
 public class Compte{
     private String username;
-    private PasswordAuthentication password;
+    private String password;
+    public Compte(String u, String p){
+        this.username = u;
+        this.password = p;
+    }
+    public String getUsername() {
+        return username;
+    }
+    public String getPassword() {
+        return password;
+    }
     Client client;
     double solde;
     Panier panier;
