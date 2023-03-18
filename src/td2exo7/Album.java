@@ -2,13 +2,13 @@ package td2exo7;
 
 import java.util.Scanner;
 
-public class Album extends Article {
+public abstract class Album extends Article {
     private String title;
     private String Author;
     private String prodMusic;
     private int anneeEdition;
     private String[] titres;
-    private float prix;
+    private double prix;
     private Genre style;
     public String getTitle() {
         return title;
@@ -41,7 +41,13 @@ public class Album extends Article {
         input.close();
     }
     public void afficherArticle(){
-        System.out.println(this.getTitle());
+        System.out.println("Album Title: " + this.getTitle() + "\nArtiste: " + this.getAuthor() + "\nMaison de Prod" + this.getProdMusic() );
     }
-    // double calculPrix();
+    abstract double calculPrix();
+    public double getPrix() {
+        return prix;
+    }
+    public void setPrix(double prix) {
+        this.prix = prix;
+    }
 }

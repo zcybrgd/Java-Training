@@ -4,7 +4,8 @@ public class Numerique extends Album {
     String url;
     double reduction;
     public double calculPrix(){
-        double Prix=0;
+        double Prix= this.getPrix()*(0.95);
+        this.setPrix(Prix);
         return Prix;
     }
 }
