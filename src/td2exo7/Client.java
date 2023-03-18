@@ -54,13 +54,7 @@ public class Client {
         }
         return messagePrompt;
     }
-    public Compte creercompte(){
-        Scanner input = new Scanner(System.in);
-        System.out.print("Entrer votre nom d'utilisateur : ");
-        String username = input.nextLine();
-        System.out.print("\nEntrer votre mot de passe : ");
-        String password = input.nextLine();
-        input.close();
+    public Compte creercompte(String username, String password){
         Compte compte = new Compte(username, password);
         return compte;
     }

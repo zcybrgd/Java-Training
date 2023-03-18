@@ -26,23 +26,71 @@ public class Main {
                         System.out.println("4. Création d'un compte avec un nom d'utilisateur différent");
                         System.out.println("Choisissez : ");
                         int choixInterne=input.nextInt();
+                        Client client0 = new Client("Boukhetala", "Zaineb", "16004");
+                        site.ajouterUnClient(client0);
+                        Compte compte0 = client0.creercompte("zed18","pootd");
+                        site.ajouterUnCompte(compte0);
                         switch(choixInterne){
-                            case 1:{}break;
-                            case 2:{}break;
-                            case 3:{}break;
-                            case 4:{}break;
+                            case 1:{
+                            Client client = new Client("ffg", "hfhth", "ghfthht");
+                            if(site.clientExistant(client)){
+                                System.out.println("Client Existant");
+                            }else{
+                                site.ajouterUnClient(client);
+                                System.out.println("Inclus dans la liste des clients avec succès, Bienvenue dans notre site");
+                            }
+                            }break;
+                            case 2:{
+                                if(site.clientExistant(client0)){
+                                    System.out.println("Client Existant");
+                                }else{
+                                    site.ajouterUnClient(client0);
+                                    System.out.println("Inclus avec succès, Bienvenue dans notre site");
+                                }
+                            }break;
+                            case 3:{
+                                Compte compte = client0.creercompte("zed18", "pootd");
+                                if(site.compteExistant(compte)){
+                                    System.out.println("nom d utilisateur existant, veuillez choisir un autre username");
+                                }else{
+                                    site.ajouterUnCompte(compte);
+                                    System.out.println("Compte validé, Bienvenue, vous etes maintenant un utilisateur");
+                                }
+                            }break;
+                            case 4:{
+                                Compte compte = client0.creercompte("dgsrghr", "grthrth");
+                                if(site.compteExistant(compte)){
+                                    System.out.println("nom d utilisateur existant, veuillez choisir un autre username");
+                                }else{
+                                    site.ajouterUnCompte(compte);
+                                    System.out.println("Compte validé, Bienvenue, vous etes maintenant un utilisateur");
+                                }
+                            }break;
                         }
                     }break;
                     case 2:{
-                        System.out.println("1. Test d’authentification d'un client qui n'existe pas");
-                        System.out.println("2. Test d’authentification d'un client qui existe mais mot de passe incorrecte");
-                        System.out.println("3. Test d’authentification d'un client qui existe avec mot de passe correcte");
+                        System.out.println("1. Test d'authentification d'un client qui n'existe pas");
+                        System.out.println("2. Test d'authentification d'un client qui existe mais mot de passe incorrecte");
+                        System.out.println("3. Test d'authentification d'un client qui existe avec mot de passe correcte");
                         System.out.println("Choisissez : ");
                         int choixInterne=input.nextInt();
+                        Client client0 = new Client("Boukhetala", "Zaineb", "16004");
+                        site.ajouterUnClient(client0);
+                        Compte compte0 = client0.creercompte("zed18","pootd");
+                        site.ajouterUnCompte(compte0);
                         switch(choixInterne){
-                            case 1:{}break;
-                            case 2:{}break;
-                            case 3:{}break;
+                            case 1:{
+                                String message = client0.seConnecter(site);
+                                System.out.println(message);
+                            }break;
+                            case 2:{
+                                String message = client0.seConnecter(site);
+                                System.out.println(message);
+                            }break;
+                            case 3:{
+                                String message = client0.seConnecter(site);
+                                System.out.println(message);
+                            }break;
                         }
                     }break;
                 }
