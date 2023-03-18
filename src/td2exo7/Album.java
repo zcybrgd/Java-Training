@@ -10,6 +10,18 @@ public abstract class Album extends Article {
     private String[] titres;
     private double prix;
     private Genre style;
+    public Album(String t, String a, String p, int annee, String[] titles, double prix, Genre s){
+           this.title = t;
+           this.Author = a;
+           this.prodMusic = p;
+           this.anneeEdition = annee;
+           this.titres = titles;
+           this.prix = prix;
+           this.style = s;
+    }
+    public Genre getStyle() {
+        return style;
+    }
     public String getTitle() {
         return title;
     }

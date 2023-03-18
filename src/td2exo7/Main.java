@@ -1,9 +1,22 @@
 package td2exo7;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){
+        Calendar jourAchat = new GregorianCalendar(2023, Calendar.MARCH, 17);
+        Calendar jourAchatd = new GregorianCalendar(2023, Calendar.MARCH, 10);
+        String[] folklore = {"cardigan","betty","august"};
+        String[] Nectar = {"MODUS","Pretty","Sanctuary"};
+        String[] a30 = {"Easy On Me", "Hold On", "All Night Parking"};
+        Physique ph1 = new Physique("folklore", "taylor swift", "Big Machine Records", 2020, folklore ,18.5 , Genre.ALT, jourAchat);
+        Physique ph2 = new Physique("Nectar", "Joji", "Interscope", 2020, Nectar, 14.2 , Genre.RNB, jourAchat);
+        Physique ph3 = new Physique("30", "Adele", "British Records", 2022, a30, 21.9, Genre.POP, jourAchatd);
+        Numerique num1 = new Numerique("folklore", "taylor swift", "Big Machine Records", 2020, folklore ,18.5 , Genre.ALT, "https");
+        Numerique num2 = new Numerique("Nectar", "Joji", "Interscope", 2020, Nectar, 14.2 , Genre.RNB, "https//02");
+        Numerique num3 = new Numerique("30", "Adele", "British Records", 2022, a30, 21.9, Genre.POP, "https/96");
         NetMusic site = new NetMusic();
         Scanner input = new Scanner(System.in);
         System.out.println("\t\tBIENVENUE DANS NOTRE SITE");
@@ -102,15 +115,32 @@ public class Main {
                 int choixAct = input.nextInt();
                 switch(choixAct){
                     case 1:{
+                        Catalogue catal = new Catalogue();
                         System.out.println("1. Ajouter des albums physiques et numériques au catalogue");
-                        System.out.println("2. Consulter le catalogue d’album");
-                        System.out.println("Choisissez : ");
-                        int choixInterne=input.nextInt();
-                        switch(choixInterne){
-                            case 1:{}break;
-                            case 2:{}break;
+                        System.out.println("Choisissez 1 pour Physique et 2 pour Numérique");
+                        int choixAlbum=input.nextInt();
+                                switch(choixAlbum){
+                                    case 1:{
+                                    Physique[] albums = new Physique[3];
+                                    albums[0] = ph1;
+                                    albums[1] = ph2;
+                                    albums[2] = ph3;
+                                    catal.setAlbums(albums);
+                                    }break;
+                                    case 2:{
+                                    Numerique[] albums = new Numerique[3];
+                                    albums[0] = num1;
+                                    albums[1] = num2;
+                                    albums[2] = num3;
+                                    catal.setAlbums(albums);
+                                    }break;
+                                }
+                        System.out.println("2. Consulter le catalogue d'album");
+                        for(Album each : catal.getAlbums()){
+                            System.out.println("----------------");
+                            System.out.println("Title: " + each.getTitle() +"\nArtiste: "+ each.getAuthor() + "\nPrix: " + each.getPrix());
                         }
-                    }break;
+                        } break;
                     case 2:{
                         System.out.println("1. Achat de deux albums physique");
                         System.out.println("2. Achat d'un album numérique");
@@ -119,15 +149,41 @@ public class Main {
                         System.out.println("Choisissez : ");
                         int choixInterne=input.nextInt();
                         switch(choixInterne){
-                            case 1:{}break;
-                            case 2:{}break;
-                            case 3:{}break;
-                            case 4:{}break;
+                            case 1:{
+                                System.out.println("l'opération d'achat du premier album : Prix : " + ph1.calculPrix());
+                                System.out.println("l'opération d'achat du deuxieme album : Prix : " + ph2.calculPrix());
+                            }break;
+                            case 2:{
+                                System.out.println("l'opération d'achat d'un album num : Prix : " + num1.calculPrix());
+                            }break;
+                            case 3:{
+                                boolean bool = ph3.rembourser();
+                                if(bool==true){
+                                    System.out.println("Album Remboursable");
+                                }else{
+                                    System.out.println("Album NON Remboursable");
+                                }
+                            }break;
+                            case 4:{
+                                boolean bool = ph1.rembourser();
+                                if(bool==true){
+                                    System.out.println("Album Remboursable");
+                                }else{
+                                    System.out.println("Album NON Remboursable");
+                                }
+                            }break;
                         }
                     }break;
                 }
             }break;
             case 3:{
+                Catalogue catal = new Catalogue();
+                Magazine[] mag = new Magazine[3];
+                mag[0].creerArticle("VOGUE");
+                mag[1].creerArticle("ELLE");
+                mag[0].setDate_achat(jourAchatd);
+                mag[1].setDate_achat(jourAchat);
+                catal.setMagazines(mag);
                 System.out.println("1. Création et affichage des magazines");
                 System.out.println("2. Achat et Remboursement des magazines");
                 System.out.println("Choisissez : ");
@@ -136,19 +192,17 @@ public class Main {
                     case 1:{
                         System.out.println("1. Ajouter des magazines au catalogue");
                         System.out.println("2. Consulter le catalogue de magazines");
-                        System.out.println("Choisissez : ");
-                        int choixInterne=input.nextInt();
-                        switch(choixInterne){
-                            case 1:{}break;
-                            case 2:{}break;
+                        for(Magazine each : catal.getMagazines()){
+                            System.out.println("----------------");
+                            System.out.println("Title: " + each.getTitreMag());
                         }
                     }break;
                     case 2:{
-                        System.out.println("1. Achat d’un magazine sans avoir le solde suffisant pour le faire");
+                        System.out.println("1. Achat d'un magazine sans avoir le solde suffisant pour le faire");
                         System.out.println("2. Créditer le compte avec 500 DA");
                         System.out.println("3. Achat de deux magazines");
                         System.out.println("4. Remboursement d'un magazine dans un délai >7 jours ");
-                        System.out.println("4. Remboursement d'un magazine dans un délai de 7 jours ");
+                        System.out.println("5. Remboursement d'un magazine dans un délai de 7 jours ");
                         System.out.println("Choisissez : ");
                         int choixInterne=input.nextInt();
                         switch(choixInterne){
