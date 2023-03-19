@@ -5,6 +5,11 @@ import java.util.Calendar;
 public class Magazine extends Article implements EchangeRembour {
     private String titreMag;
     private Calendar date_achat;
+    private double prix;
+    public Magazine(String titre, Calendar achat){
+        this.titreMag = titre;
+        this.date_achat = achat;
+    }
     public Calendar getDate_achat() {
         return date_achat;
     }
@@ -19,6 +24,12 @@ public class Magazine extends Article implements EchangeRembour {
     }
     public void afficherArticle(){
         System.out.println(this.getTitreMag());
+    }
+    public void setPrix(double prix) {
+        this.prix = prix;
+    }
+    public double getPrix() {
+        return prix;
     }
     public boolean estDepasse()
     {

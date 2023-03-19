@@ -179,10 +179,12 @@ public class Main {
             case 3:{
                 Catalogue catal = new Catalogue();
                 Magazine[] mag = new Magazine[3];
-                mag[0].creerArticle("VOGUE");
-                mag[1].creerArticle("ELLE");
-                mag[0].setDate_achat(jourAchatd);
-                mag[1].setDate_achat(jourAchat);
+                mag[0] = new Magazine("VOGUE", jourAchatd);
+                mag[0].setPrix(63.2);
+                mag[1] = new Magazine("ELLE", jourAchat);
+                mag[1].setPrix(12.4);
+                mag[2] = new Magazine("VANITY FAIR", jourAchat);
+                mag[2].setPrix(47.4);
                 catal.setMagazines(mag);
                 System.out.println("1. Création et affichage des magazines");
                 System.out.println("2. Achat et Remboursement des magazines");
@@ -198,6 +200,11 @@ public class Main {
                         }
                     }break;
                     case 2:{
+                        Client client0 = new Client("Boukhetala", "Zaineb", "16004");
+                        site.ajouterUnClient(client0);
+                        Compte compte0 = client0.creercompte("zed18","pootd");
+                        site.ajouterUnCompte(compte0);
+                        compte0.setSolde(45.3);
                         System.out.println("1. Achat d'un magazine sans avoir le solde suffisant pour le faire");
                         System.out.println("2. Créditer le compte avec 500 DA");
                         System.out.println("3. Achat de deux magazines");
@@ -206,11 +213,36 @@ public class Main {
                         System.out.println("Choisissez : ");
                         int choixInterne=input.nextInt();
                         switch(choixInterne){
-                            case 1:{}break;
-                            case 2:{}break;
-                            case 3:{}break;
-                            case 4:{}break;
-                            case 5:{}break;
+                            case 1:{
+                                compte0.acheter(mag[0].getPrix());
+                            }break;
+                            case 2:{
+                                System.out.println("Solde du compte avant le créditer : " + compte0.getSolde());
+                                compte0.crediterSolde(500);
+                                System.out.println("Solde du compte après le créditer : " + compte0.getSolde());
+                            }break;
+                            case 3:{
+                                System.out.println("Achat : Magazine  : " + mag[0].getTitreMag());
+                                compte0.acheter(mag[0].getPrix());
+                                System.out.println("Achat : Magazine  : " + mag[2].getTitreMag());
+                                compte0.acheter(mag[2].getPrix());
+                            }break;
+                            case 4:{
+                                boolean bool = mag[0].rembourser();
+                                if(bool==true){
+                                    System.out.println("Magazine Remboursable");
+                                }else{
+                                    System.out.println("Magazine NON Remboursable");
+                                }
+                            }break;
+                            case 5:{
+                                boolean bool = mag[1].rembourser();
+                                if(bool==true){
+                                    System.out.println("Magazine Remboursable");
+                                }else{
+                                    System.out.println("Magazine NON Remboursable");
+                                }
+                            }break;
                         }
                     }break;
                 }

@@ -18,8 +18,23 @@ public class Compte{
     double solde;
     Panier panier;
     Achats[] achats;
-    void choisir(){}
-    void acheter(){}
-    void debiterSolde(){}
-    void crediterSolde(){}
+    public void setSolde(double solde) {
+        this.solde = solde;
+    }
+    public double getSolde() {
+        return solde;
+    }
+    void acheter(double prix){
+        if(this.solde>=prix){
+            System.out.println("Achat effectué");
+        }else{
+            System.out.println("vous n'avez pas le crédit suffisant pour effectuer cet achat");
+        }
+    }
+    void debiterSolde(double debit){
+        this.solde -= debit;
+    }
+    void crediterSolde(double credit){
+        this.solde += credit;
+    }
 }
