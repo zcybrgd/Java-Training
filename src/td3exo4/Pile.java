@@ -9,7 +9,7 @@ public void empiler(char x){
 }
 /*retourne l’élément qui est au sommet de la pile en le supprimant de la pile. Elle 
 lance une exception si la pile est vide*/
-public int depiler() throws PileVideException{ //ligne 13
+public char depiler() throws PileVideException{ //ligne 13
 if (this.estVide()) throw new PileVideException(); //ligne 14
 return pile.removeFirst(); //ligne 15
 }

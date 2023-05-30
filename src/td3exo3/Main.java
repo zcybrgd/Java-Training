@@ -22,6 +22,7 @@ public class Main {
     ensembleAnimaux.add(new Animal("Wolf"));
     ensembleAnimaux.add(new Animal("Rabbit"));
     // Affichez l'ensemble d'animaux en utilisant l'ittérateur fourni par la méthode Iterator();
+    System.out.println("-Affichez l'ensemble d'animaux en utilisant l'ittérateur fourni par la méthode Iterator();-");
      Iterator<Animal> i = ensembleAnimaux.iterator();
      System.out.println("Le HashSet des Animaux");
      while(i.hasNext()){
